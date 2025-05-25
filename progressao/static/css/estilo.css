@@ -1,0 +1,22 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+
+.logout {
+  margin-right: 30px; /* Isso empurra o botão para a direita */
+  background-color: #e74c3c;
+  border: none;
+  color: rgb(244, 240, 240);
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.navbar{
+  color: white;
+}

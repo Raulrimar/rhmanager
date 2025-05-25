@@ -1,0 +1,31 @@
+{% extends "paginas/modelo.html" %}
+{% load static %}
+
+{% block title %}
+<title>Excluir Registro</title>
+{% endblock title %}
+
+{% block page_title %}
+<div class="text-center mb-4 mt-4">
+  <h2>Excluir Registro</h2>
+</div>
+{% endblock page_title %}
+
+{% block content %}
+<div class="container d-flex justify-content-center">
+  <div class="card shadow p-4" style="max-width: 500px; width: 100%;">
+    <form action="" method="post">
+      {% csrf_token %}
+      <p class="text-center mb-4">
+        Deseja excluir o registro do servidor(a):<br> <strong>{{ object }}</strong>?
+      </p>
+      {{ form.as_p }}
+
+      <div class="d-flex justify-content-center gap-2 mt-3">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a class="btn btn-warning" href="{% url 'listar-servidores' %}">Voltar</a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock content %}

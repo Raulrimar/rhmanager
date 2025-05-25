@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Detalhes do Servidor</h2>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            {% if servidor.foto %}
+                <img src="{{ servidor.foto.url }}" class="img-thumbnail" alt="Foto do servidor">
+            {% else %}
+                <img src="{% url 'img/foto_padrao.png' %}" class="img-thumbnail" alt="Sem foto">
+            {% endif %}
+        </div>
+        <div class="col-md-9">
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Nome:</strong> {{ servidor.nome }}</li>
+                <li class="list-group-item"><strong>Matrícula:</strong> {{ servidor.matricula }}</li>
+                <li class="list-group-item"><strong>Cargo:</strong> {{ servidor.cargo }}</li>
+                <li class="list-group-item"><strong>Data de Admissão:</strong> {{ servidor.data_admissao }}</li>
+                <li class="list-group-item"><strong>Lotação:</strong> {{ servidor.lotacao }}</li>
+                <li class="list-group-item"><strong>Última Lotação:</strong> {{ servidor.ultima_lotacao }}</li>
+                <li class="list-group-item"><strong>Formação:</strong> {{ servidor.formacao }}</li>
+                <li class="list-group-item"><strong>Telefone:</strong> {{ servidor.telefone }}</li>
+                <li class="list-group-item"><strong>Email:</strong> {{ servidor.email }}</li>
+                <li class="list-group-item"><strong>Próxima Promoção:</strong> {{ servidor.proxima_promocao }}</li>
+                <li class="list-group-item"><strong>Situação:</strong> {{ servidor.situacao }}</li>
+                <li class="list-group-item"><strong>Cedido:</strong> {{ servidor.cedido }}</li>
+                <li class="list-group-item"><strong>Município:</strong> {{ servidor.municipio }}</li>
+                <li class="list-group-item"><strong>Observação:</strong> {{ servidor.observacao }}</li>
+                <li class="list-group-item"><strong>Documentação:</strong> {{ servidor.documentacao }}</li>
+                <li class="list-group-item"><strong>Classe:</strong> {{ servidor.classe }}</li>
+                <li class="list-group-item"><strong>Sexo:</strong> {{ servidor.sexo }}</li>
+                <li class="list-group-item"><strong>Mês de Férias:</strong> {{ servidor.mesFerias }}</li>
+                <li class="list-group-item"><strong>Início das Férias:</strong> {{ servidor.inicioferias }}</li>
+                <li class="list-group-item"><strong>Término das Férias:</strong> {{ servidor.terminoferias }}</li>
+                <li class="list-group-item"><strong>Cancelamentos:</strong> {{ servidor.cancelamentos }}</li>
+                <li class="list-group-item"><strong>Origem:</strong> {{ servidor.origem }}</li>
+            </ul>
+        </div>
+    </div>
+    <a href="{% url 'listar-servidores' %}" class="btn btn-secondary mt-4">Voltar à lista</a>
+
+    <a href="{% url 'listar-servidores' %}" class="btn btn-secondary mt-4">Voltar à lista</a>
+
+<!-- Botão para imprimir -->
+<button class="btn btn-outline-primary mt-4 ms-2" onclick="window.print()">
+    <i class="fa-solid fa-print"></i> Imprimir
+</button>
+<a class="btn btn-warning" href="{% url 'listar-servidores' %}">Voltar</a>
+</div>
+{% endblock %}

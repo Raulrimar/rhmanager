@@ -1,0 +1,59 @@
+<body class="bg-dark text-white">
+  {% extends "paginas/modelo.html" %}
+  {% load static %}
+  {% load crispy_forms_filters %}
+  {% load crispy_forms_tags %}
+
+  {% block navbar %}
+  {% endblock navbar %}
+
+  {% block content %}
+
+  <style>
+  body {
+    background-image: url("{% static 'img/Fundologin.png' %}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  /* Opcional: deixar um leve escurecimento pra destacar o formulário */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* leve escurecimento    bg-dark text-white */
+    z-index: -1;
+  }
+</style>
+
+  <div class="d-flex justify-content-center align-items-center vh-80 flex-column text-center py-3">
+    <div class="mb-5 mt-5">
+      <img src="{% static 'img/logo_rh.png' %}" width="50" height="50" alt="Logo RH">
+      <h3 class="mt-2 mb-0">RHManager</h3>
+    </div>
+
+    <div class="col-md-4">
+  <form action="" method="POST" class="p-3 rounded text-center">
+    {% csrf_token %}
+    <img src="{% static 'img/logopc.png' %}" alt="logo pc" width="90" class="mb-2">
+    <h4 class="mb-3 text-white">Acesso ao sistema</h4>
+    <div class="text-start text-white">
+      {{ form|crispy }}
+    </div>
+    <button type="submit" class="btn btn-primary mt-3 w-100">Acessar</button>
+  </form>
+</div>
+  {% endblock content %}
+
+  {% block footer %}
+  <footer class="text-center bg-dark text-white py-2">
+    <img src="{% static 'img/logopc.png' %}" alt="logo pc" width="30" class="mb-2">
+    <p class="mb-0 small">
+      <strong>Polícia Civil do Estado do Acre</strong><br>
+      Departamento de Inteligência<br>
+      &copy;2025 - Coordenação de Tecnologia da Informação - COTIN
+    </p>
+  </footer>
+  {% endblock footer %}
+</body>

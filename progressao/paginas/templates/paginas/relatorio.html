@@ -1,0 +1,38 @@
+{% extends "paginas/modelo.html" %}
+
+{% block title %}
+<title>Relatórios</title>
+{% endblock title %}
+
+{% block page_title %}
+<h2>Relatórios</h2>
+{% endblock page_title %}
+
+{% block content %}
+<style>
+  html, body {
+    height: 80%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .iframe-container {
+    height:65vh;
+    width: 70vw;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>
+
+<div class="iframe-container">
+  <iframe 
+    title="BancoTalentos"
+    src="https://app.powerbi.com/view?r=eyJrIjoiNDIyYjQzMWMtMzkwMi00ODVjLTgzY2ItNGE1Zjk1ZDI2NTk3IiwidCI6IjdmZDRjZTRmLWRjN2UtNDZhMS04ODlhLTg4OWI1ZWFhYjVmZiJ9" 
+    allowfullscreen>
+  </iframe>
+</div>
+{% endblock content %}
